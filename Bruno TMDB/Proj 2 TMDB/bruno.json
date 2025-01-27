@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Proj 2 TMDB",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

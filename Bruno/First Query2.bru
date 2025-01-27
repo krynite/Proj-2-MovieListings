@@ -1,0 +1,21 @@
+meta {
+  name: First Query2
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://www.omdbapi.com/?apikey=5a815159&type=movie&s=series
+  body: none
+  auth: none
+}
+
+params:query {
+  apikey: 5a815159
+  type: movie
+  s: series
+  ~t: Star Wars
+  ~plot: full
+  ~r: json
+  ~page: 1
+}
