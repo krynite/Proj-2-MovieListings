@@ -31,32 +31,32 @@ async function getData() {
     } catch (error) {
         console.error(error.message);
     }
-    console.log(testJson,`from testJson`)
-    console.log(testJson.totalResults,`from testJson`)
+    // console.log(testJson,`from testJson`)
+    // console.log(testJson.totalResults,`from testJson`)
 }
 
 
 async function getAllData() {
     let json = {};
     let allJson = {};
-    for(let i = 60; i < 65 ; i++) {
+    for(let i = 1; i < 3 ; i++) {
                 try {
                     const response = await fetch(`${url}apikey=${API_KEY}&s=${searchTitle}&page=${i}`);
-                    console.log(`typeof response:`, typeof response)
-                    console.log(`response: `,response)
+                    // console.log(`typeof response:`, typeof response)
+                    // console.log(`response: `,response)
                     if (!response.ok) {
                     throw new Error(`Response status: ${response.status}`);
                     }
 
                     json = await response.json();
                     console.log(json);
-                    console.log(`testinbg typeof`,typeof json)
+                    // console.log(`testinbg typeof`,typeof json)
 
                 } catch (error) {
                     console.error(error.message);
                 }
     }
-    console.log(`Testing allJson`,allJson)
+    // console.log(`Testing allJson`,allJson)
 
 }
 
