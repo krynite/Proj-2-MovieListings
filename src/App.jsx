@@ -1,9 +1,41 @@
 // src/App.jsx
-
+import "../src/App.css"
 const App = () => {
 
   return (
-    <h1>Hello world!</h1>
+    <>
+    <h1>Movie Search</h1>
+    <h3>You are searching movies through a public API OMDb </h3>
+
+   <div className="mainDiv">
+        <aside>
+          <h2>Movie Name</h2>
+          <label>Plot: Simple Plot  --------------------------------------------------------------------------------------------------------------------- </label><br/>
+          <label>Description: </label><br/>
+          <label>Rotten Tomato Score: </label><br/>
+          <label>Release Date: </label><br/>
+          <label>Cost: </label><br/>
+        </aside><br/>
+        <section>
+          <h2>This is a list of Search Results: </h2>
+          <ul className="rightList">
+              <li>Seach Result 1 ---------------------------------------------------------------------------------------------------------------------</li>
+              <li>Seach Result 2</li>
+              <li>Seach Result 3</li>
+          </ul>
+        </section>
+    </div>
+      <div>
+        <h2>Favorite Movies </h2>
+        <ul className="favMovieList">
+            <li>Movie 1</li>
+            <li>Movie 2</li>
+            <li>Movie 3</li>
+        </ul>
+      </div>
+    
+    </>
+    
   );
 }
 
