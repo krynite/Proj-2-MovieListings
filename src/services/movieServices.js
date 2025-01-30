@@ -3,20 +3,19 @@
 
 const API_KEY = "5a815159"
 const url = "http://www.omdbapi.com/?"
-const searchTitle = "batman"
-const searchPage = "1"
+// const searchTitle = "batman"
 
 
 
 
 
-async function getData() {
+
+async function getData(searchTitle) {
     
-
+    const searchPage = "1"
+    
     const getUrl = `${url}apikey=${API_KEY}&s=${searchTitle}&page=${searchPage}`
 //   console.log(getUrl)
-    let testJson;
-
 
     try {
         const response = await fetch(getUrl);
@@ -26,37 +25,10 @@ async function getData() {
 
         const json = await response.json();
         // console.log(json);
-        testJson = json
-
+        return json
     } catch (error) {
         console.error(error.message);
     }
-    // console.log(testJson,`from testJson`)
-    // console.log(testJson.totalResults,`from testJson`)
-}
-
-
-async function getAllData() {
-    let json = {};
-    let allJson = {};
-    for(let i = 1; i < 3 ; i++) {
-                try {
-                    const response = await fetch(`${url}apikey=${API_KEY}&s=${searchTitle}&page=${i}`);
-                    // console.log(`typeof response:`, typeof response)
-                    // console.log(`response: `,response)
-                    if (!response.ok) {
-                    throw new Error(`Response status: ${response.status}`);
-                    }
-
-                    json = await response.json();
-                    console.log(json);
-                    // console.log(`testinbg typeof`,typeof json)
-
-                } catch (error) {
-                    console.error(error.message);
-                }
-    }
-    // console.log(`Testing allJson`,allJson)
 
 }
 
@@ -65,5 +37,5 @@ async function getAllData() {
 
 // export default {getData, getAllData}
 
-getAllData()
-export default {getAllData, getData}
+// getAllData()
+export default getData

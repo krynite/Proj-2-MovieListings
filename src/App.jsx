@@ -1,7 +1,7 @@
 // src/App.jsx
 import "../src/App.css"
-import SearchMovie from "./components/searchMovies";
-import DisplayMovieList from "./components/displayMovieList";
+import SearchMovie from "./components/SearchMovies";
+import DisplayMovieList from "./components/DisplayMovieList";
 
 
 const App = () => {

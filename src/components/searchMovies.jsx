@@ -1,29 +1,39 @@
 import { useState } from "react"
+import getData from "../services/movieServices"
+
 
 const SearchMovie = () => {
-    const [formData,setFormData] = useState({
-
-    })
+    const [inputData,setInputData] = useState({title:''})
+    const [submitData, setSubmitData] = useState({title:''})
 
 
     const handleChange = ({target}) => {
-        const {title, value } = target
-        setFormData({...formData, [title]: value})
-        
-
+        const {name, value} = target
+        setInputData({...inputData, [name]: value})
     }
 
 
-    const handleSubmit = () => {
-        // send input to search in api
-        console.log(`Submit button pressed.`)
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const result = await getData(inputData.title)
+            console.log(result.Search)
+
+
+        }catch (error){
+            console.error(error.message);
+        }
+        setSubmitData(inputData.title)
+        console.log(submitData)
+        getData(submitData)
     }
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>Movie Title:  </label><input name="name" value={formData.title} onChange={handleChange}/>
-                <button>Search Button</button>
+            <form onSubmit={handleSubmit} value={inputData.title}>
+                <label>Movie Title:  </label><input id="title" name="title" value={inputData.title} onChange={handleChange}/>
+                <button type="submit">Search Button</button>
             </form>
         </>
 

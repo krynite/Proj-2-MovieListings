@@ -3,9 +3,10 @@ import getAllData from "../services/movieServices"
 import { useState } from "react"
 
 
+
 const DisplayMovieList = () =>{
 
-    const [movies,setMovie] = useState([{
+    const [movies,setMovies] = useState([{
       Title: 'Batman Returns: Rob Burman on Mold Making and Costumes',
       Year: '2012',
       imdbID: 'tt2186524',
@@ -28,10 +29,10 @@ const DisplayMovieList = () =>{
     return (
         <>
             <ul className="rightList">
-                <li>Title: {movies.title}</li>
-                <li>Year: {movies.Year}</li>
-                <li>Type: {movies.Type}</li>
-                <li>Poster: {movies.Poster}</li>
+                <li>Title: {movies[0].Title}</li>
+                <li>Year: {movies[0].Year}</li>
+                <li>Type: {movies[0].Type}</li>
+                {/* <li>Poster: {movies[0].Poster}</li> */}
             </ul>
 
 

@@ -1,0 +1,21 @@
+meta {
+  name: Movie Search test
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://www.omdbapi.com/?apikey=5a815159&s=batman&page=60
+  body: none
+  auth: none
+}
+
+params:query {
+  apikey: 5a815159
+  s: batman
+  page: 60
+  ~type: movie
+  ~t: Star Wars
+  ~plot: full
+  ~r: json
+}
