@@ -2,6 +2,8 @@
 import "../src/App.css"
 import SearchMovie from "./components/SearchMovies";
 import DisplayMovieList from "./components/DisplayMovieList";
+import {Route, Routes} from  'react-router'
+import FavList from "./components/FavList"
 
 
 const App = () => {
@@ -13,31 +15,18 @@ const App = () => {
 
    <div className="mainDiv">
         <SearchMovie></SearchMovie>
-        {/* <section>
-          <h2>Movie Name</h2>
-          <label>Plot: Simple Plot  --------------------------------------------------------------------------------------------------------------------- </label><br/>
-          <label>Description: </label><br/>
-          <label>Rotten Tomato Score: </label><br/>
-          <label>Release Date: </label><br/>
-          <label>Cost: </label><br/>
-        </section><br/> */}
         <section>
-          <h2>This is a list of Search Results: </h2>
-          <DisplayMovieList></DisplayMovieList>
-          {/* <ul className="rightList">
-              <li>Seach Result 1 ---------------------------------------------------------------------------------------------------------------------</li>
-              <li>Seach Result 2</li>
-              <li>Seach Result 3</li>
-          </ul> */}
+          <h2>Search Results: </h2>
+          <Routes>
+            <Route path="SearchedMovies" element={<DisplayMovieList/>}/>
+          </Routes>
         </section>
     </div>
       <div>
         <h2>Favorite Movies </h2>
-        <ul className="favMovieList">
-            <li>Movie 1</li>
-            <li>Movie 2</li>
-            <li>Movie 3</li>
-        </ul>
+        <Routes>
+          <Route path="" element={<FavList/>}/>
+        </Routes>
       </div>
     
     </>
