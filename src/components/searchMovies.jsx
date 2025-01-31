@@ -1,12 +1,13 @@
 import { useState } from "react"
 import getData from "../services/movieServices"
 import DisplayMovieList from "./DisplayMovieList"
+import DisplayMovieDetail from "../pages/DisplayMovieDetail"
 
 
 const SearchMovie = () => {
     const [inputData,setInputData] = useState({title:''})
     const [submitData, setSubmitData] = useState({title:''})
-    const [cachedData, setCachedData] = useState({})
+    const [cachedData, setCachedData] = useState([])
 
 
     const handleChange = ({target}) => {
@@ -39,6 +40,7 @@ const SearchMovie = () => {
                 <button type="submit">Search Button</button>
             </form>
             <DisplayMovieList movies={cachedData}/>
+            <DisplayMovieDetail movies={cachedData}/>
         </>
 
     )

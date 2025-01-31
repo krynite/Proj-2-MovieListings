@@ -1,7 +1,7 @@
-import getData from "../services/movieServices"
+// import getData from "../services/movieServices"
 
-import { useState } from "react"
-
+// import { useState } from "react"
+import { Link } from "react-router"
 
 
 const DisplayMovieList = ({movies}) =>{
@@ -19,16 +19,17 @@ const DisplayMovieList = ({movies}) =>{
         <>
           <div>
             {movies.map((movie)=>{
-              <div key={movie.imdbID}>
-                <ul className="rightList">
-                  <li>Title: {movie.Title}</li>
-                  <li>Year: {movie.Year}</li>
-                  <li>Type: {movie.Type}</li>
-                </ul>
+              return (
+              <div key={movie.imdbID}><Link to={`/SearchedMovies/${movie.imdbID}`}>
+                {/* <ul className="rightList"> */}
+                  <p>Title: {movie.Title}</p>
+                  <p>Year: {movie.Year}</p>
+                  <p>Type: {movie.Type}</p></Link> <br/>
               </div>
-              
+              )
 
             })}
+            <button>Page 1</button>  <button>Next Page</button>
           </div>
         </>
 

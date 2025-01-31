@@ -4,6 +4,7 @@ import SearchMovie from "./components/SearchMovies";
 import DisplayMovieList from "./components/DisplayMovieList";
 import {Route, Routes} from  'react-router'
 import FavList from "./components/FavList"
+import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 
 
 const App = () => {
@@ -16,11 +17,13 @@ const App = () => {
    <div className="mainDiv">
         <SearchMovie></SearchMovie>
         <section>
-          <h2>Search Results: </h2>
+          {/* <h2>Search Results: </h2> */}
           <Routes>
-            <Route path="SearchedMovies" element={<DisplayMovieList/>}/>
+            <Route path="/SearchedMovies" element={<DisplayMovieList/>}/>
+            <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail/>}/>
           </Routes>
         </section>
+        <section></section>
     </div>
       <div>
         <h2>Favorite Movies </h2>

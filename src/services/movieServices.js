@@ -10,9 +10,9 @@ const url = "http://www.omdbapi.com/?"
 
 
 
-async function getData(searchTitle) {
+async function getData(searchTitle,numSearchPage = 1) {
     
-    const searchPage = "1"
+    const searchPage = numSearchPage.toString()
     
     const getUrl = `${url}apikey=${API_KEY}&s=${searchTitle}&page=${searchPage}`
 //   console.log(getUrl)
@@ -32,10 +32,4 @@ async function getData(searchTitle) {
 
 }
 
-
-// getData();
-
-// export default {getData, getAllData}
-
-// getAllData()
 export default getData
