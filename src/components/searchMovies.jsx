@@ -1,5 +1,5 @@
 import { useState } from "react"
-import getData from "../services/movieServices"
+import {getData} from "../services/movieServices"
 import DisplayMovieList from "./DisplayMovieList"
 import DisplayMovieDetail from "../pages/DisplayMovieDetail"
 
@@ -40,7 +40,7 @@ const SearchMovie = () => {
                 <button type="submit">Search Button</button>
             </form>
             <DisplayMovieList movies={cachedData}/>
-            <DisplayMovieDetail movies={cachedData}/>
+            {/* <DisplayMovieDetail movies={cachedData}/> */}
         </>
 
     )

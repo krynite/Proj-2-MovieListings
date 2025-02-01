@@ -32,4 +32,25 @@ async function getData(searchTitle,numSearchPage = 1) {
 
 }
 
-export default getData
+async function getMovieId(movieId) {
+    
+    const getUrl = `${url}apikey=${API_KEY}&i=${movieId}`
+
+    try {
+        const response = await fetch(getUrl);
+        if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+        }
+
+        const json = await response.json();
+        return json;
+    } catch (error) {
+        console.error(error.message);
+
+    }
+
+
+
+}
+
+export  {getData, getMovieId}
