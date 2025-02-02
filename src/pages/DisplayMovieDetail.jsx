@@ -13,7 +13,7 @@ const DisplayMovieDetail = () => {
                 const data = await getMovieId(movieID)
                 setMovieDetails(data)
             } catch (error) {
-                console.error('Error fetching movie details:', error)
+                console.error('Error getting movie details:', error)
             }
         }
 
@@ -33,6 +33,12 @@ const DisplayMovieDetail = () => {
     return (
         <div className="movie-details">
             <h2>{movieDetails.Title}</h2>
+            {movieDetails.Poster && movieDetails.Poster !== "N/A" && (
+                <img    src = {movieDetails.Poster}
+                        style={{maxWidth: '300px', height: 'auto'}}
+                />
+            )}
+
             <div className="movie-info">
                 <p><strong>Year:</strong> {movieDetails.Year}</p>
                 <p><strong>Rated:</strong> {movieDetails.Rated}</p>

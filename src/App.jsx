@@ -8,8 +8,11 @@ import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 import { useState } from "react";
 
 
+
 const App = () => {
   const [movieResults, setMovieResults] = useState([])
+  const [searchTitle, setSearchTitle] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
@@ -17,11 +20,16 @@ const App = () => {
     <h3>You are searching movies through a public API OMDb </h3>
 
    <div className="mainDiv">
-        <SearchMovie setMovieResults={setMovieResults}/>
+        <SearchMovie 
+          setMovieResults={setMovieResults} 
+          setSearchTitle={setSearchTitle} 
+          searchTitle={searchTitle} 
+          setCurrentPage={setCurrentPage} 
+          currentPage={currentPage}/>
         <section>
           <Routes>
             <Route path="/" element={<h1>nth here</h1>} />
-            <Route path="/SearchedMovies" element={<DisplayMovieList movies={movieResults} />} />
+            <Route path="/SearchedMovies" element={<DisplayMovieList movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} />
             <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} />
           </Routes>
         </section>

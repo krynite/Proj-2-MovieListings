@@ -2,15 +2,30 @@
 
 // import { useState } from "react"
 import { Link } from "react-router-dom"
+import { getData } from "../services/movieServices"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 
-const DisplayMovieList = ({movies}) =>{
-
+const DisplayMovieList = ({movies, setCurrentPage, currentPage}) =>{
+    // const navigate = useNavigate()
 
     // console.log(movies)
     if(!movies || movies.length === 0 ){
       return <div>No Movies Found.</div>
     }
+
+      const handleNextPage = (event) => {
+        if (event === 'next') {
+            setCurrentPage(currentPage +1)
+            // console.log(`test2:`, currentPage)
+        } else if (event === 'previous' && currentPage > 1) {
+            setCurrentPage(currentPage-1)
+            // console.log(`test4:`, currentPage)
+        }
+
+      }
+
 
 
 
@@ -31,7 +46,7 @@ const DisplayMovieList = ({movies}) =>{
               )
 
             })}
-            <button>Page 1</button>  <button>Next Page</button>
+            <button onClick={()=>handleNextPage('previous')}>Prev</button>  <button onClick={()=>handleNextPage('next')}>Next</button>
           </div>
         </>
 
