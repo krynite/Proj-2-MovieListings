@@ -8,7 +8,7 @@ const DisplayMovieList = ({movies}) =>{
 
 
     // console.log(movies)
-    if(movies.length === 0 ){
+    if(!movies || movies.length === 0 ){
       return <div>No Movies Found.</div>
     }
 

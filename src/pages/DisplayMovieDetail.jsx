@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {getMovieId} from "../services/movieServices"
 import {useEffect, useState} from "react"
 
 const DisplayMovieDetail = () => {
     const { movieID } = useParams()
+    const navigate = useNavigate()
     const [movieDetails, setMovieDetails] = useState(null)
     
     useEffect(() => {
@@ -20,6 +21,10 @@ const DisplayMovieDetail = () => {
             fetchMovieDetails()
         }
     }, [movieID])
+
+    const handleBackClick = () => {
+        navigate("/SearchedMovies")
+    }
 
     if (!movieDetails) {
         return <div>Loading...</div>
@@ -38,6 +43,7 @@ const DisplayMovieDetail = () => {
                 <p><strong>Plot:</strong> {movieDetails.Plot}</p>
                 <p><strong>IMDb Rating:</strong> {movieDetails.imdbRating}</p>
             </div>
+            <button onClick={handleBackClick}>Back</button>
         </div>
     )
 }

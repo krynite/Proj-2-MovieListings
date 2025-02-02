@@ -2,12 +2,13 @@ import { useState } from "react"
 import {getData} from "../services/movieServices"
 import DisplayMovieList from "./DisplayMovieList"
 import DisplayMovieDetail from "../pages/DisplayMovieDetail"
+import { useNavigate } from "react-router"
 
 
-const SearchMovie = () => {
+const SearchMovie = ({setMovieResults}) => {
     const [inputData,setInputData] = useState({title:''})
     const [submitData, setSubmitData] = useState({title:''})
-    const [cachedData, setCachedData] = useState([])
+    const navigate = useNavigate()
 
 
     const handleChange = ({target}) => {
@@ -15,15 +16,14 @@ const SearchMovie = () => {
         setInputData({...inputData, [name]: value})
     }
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
             const result = await getData(inputData.title)
             console.log(result.Search)
-            setCachedData(result.Search)
-
+            setMovieResults(result.Search)
+            navigate('/SearchedMovies')
 
         }catch (error){
             console.error(error.message);
@@ -36,11 +36,9 @@ const SearchMovie = () => {
     return (
         <>
             <form onSubmit={handleSubmit} value={inputData.title}>
-                <label>Movie Title:  </label><input id="title" name="title" value={inputData.title} onChange={handleChange}/>
+                <label>Movie Title:  </label><input id="title" name="title" value={inputData.title} onChange={handleChange}/><br/>
                 <button type="submit">Search Button</button>
             </form>
-            <DisplayMovieList movies={cachedData}/>
-            {/* <DisplayMovieDetail movies={cachedData}/> */}
         </>
 
     )
