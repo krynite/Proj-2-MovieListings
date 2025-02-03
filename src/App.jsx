@@ -2,7 +2,7 @@
 import "../src/App.css"
 import SearchMovie from "./components/SearchMovies";
 import DisplayMovieList from "./components/DisplayMovieList";
-import {Route, Routes} from  'react-router-dom'
+import {Route, Routes, Link} from  'react-router-dom'
 // import FavList from "./components/FavList"
 import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 import { useState } from "react";
@@ -16,8 +16,10 @@ const App = () => {
 
   return (
     <>
+    <Link to="/">
     <h1>Movie Search</h1>
     <h3>You are searching movies through a public API OMDb </h3>
+    </Link>
 
    <div className="mainDiv">
         <SearchMovie 
@@ -28,7 +30,7 @@ const App = () => {
           currentPage={currentPage}/>
         <section>
           <Routes>
-            <Route path="/" element={<h1>nth here</h1>} />
+            <Route path="/"/>
             <Route path="/SearchedMovies" element={<DisplayMovieList movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} />
             <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} />
           </Routes>
