@@ -6,6 +6,7 @@ import {Route, Routes, Link} from  'react-router-dom'
 // import FavList from "./components/FavList"
 import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 import { useState } from "react";
+import DisplayFav from "./components/DisplayFav"
 
 
 
@@ -13,6 +14,8 @@ const App = () => {
   const [movieResults, setMovieResults] = useState([])
   const [searchTitle, setSearchTitle] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
+  const [favResults, setFavResults] = useState([])
+  // const [currentFavPage, setCurrentFavPage] = useState(1)
 
   return (
     <>
@@ -37,6 +40,10 @@ const App = () => {
         </section>
 
     </div>
+    <br/>
+    <section>
+      <DisplayFav favResults={favResults} setFavResults={setFavResults}/>
+    </section>
       {/* <div>
         <h2>Favorite Movies </h2>
         <Routes>

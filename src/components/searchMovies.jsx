@@ -5,6 +5,7 @@ import {getData} from "../services/movieServices"
 import { useNavigate } from "react-router"
 
 
+
 const SearchMovie = ({setMovieResults, searchTitle, setSearchTitle, currentPage, setCurrentPage}) => {
     const [inputData,setInputData] = useState({title:''})
     const [submitData, setSubmitData] = useState({title:''})
@@ -60,6 +61,7 @@ const SearchMovie = ({setMovieResults, searchTitle, setSearchTitle, currentPage,
                 <label>Movie Title:  </label><input id="title" name="title" value={inputData.title} onChange={handleChange}/><br/>
                 <button type="submit">Search Button</button>
             </form>
+            {/* <DisplayFav/> */}
         </>
 
     )

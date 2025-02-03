@@ -1,6 +1,5 @@
 // import getData from "../services/movieServices"
 
-// import { useState } from "react"
 import { Link } from "react-router-dom"
 import { getData } from "../services/movieServices"
 import { useNavigate } from "react-router-dom"
@@ -37,7 +36,6 @@ const DisplayMovieList = ({movies, setCurrentPage, currentPage}) =>{
               return (
               <div key={movie.imdbID}>
                 <Link to={`/SearchedMovies/${movie.imdbID}`}>
-                {/* <ul className="rightList"> */}
                   <p>Title: {movie.Title}</p>
                   <p>Year: {movie.Year}</p>
                   <p>Type: {movie.Type}</p>

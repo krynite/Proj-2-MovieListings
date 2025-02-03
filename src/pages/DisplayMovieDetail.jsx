@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import {getMovieId} from "../services/movieServices"
 import {useEffect, useState} from "react"
+import { addToFav } from "../services/movieServices";
 
 const DisplayMovieDetail = () => {
     const { movieID } = useParams()
@@ -30,6 +31,10 @@ const DisplayMovieDetail = () => {
         return <div>Loading...</div>
     }
 
+
+
+
+
     return (
         <div className="movie-details">
             <h2>{movieDetails.Title}</h2>
@@ -40,6 +45,7 @@ const DisplayMovieDetail = () => {
             )}
 
             <div className="movie-info">
+                <button onClick={()=>addToFav(movieDetails)}>Add to Favorites</button>
                 <p><strong>Year:</strong> {movieDetails.Year}</p>
                 <p><strong>Rated:</strong> {movieDetails.Rated}</p>
                 <p><strong>Runtime:</strong> {movieDetails.Runtime}</p>
