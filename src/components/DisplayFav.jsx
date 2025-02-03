@@ -27,8 +27,9 @@ const DisplayFav = ({favResults, setFavResults }) => {
 
     return (
         <>
-            <h3>Test Fav Display</h3>
+            
             <div>
+                <h3>Favorited Movies</h3>
                 {favResults.map((favResult)=> {
                     return(
                         <div key={favResult.fields.imdbID}>

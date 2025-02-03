@@ -19,24 +19,22 @@ const App = () => {
 
   return (
     <>
-    <Link to="/" className="movie-link">
+    <Link to="/">
     <h1>Movie Search</h1>
     <h3>You are searching movies through a public API OMDb </h3>
     </Link>
+
+   <div className="mainDiv">
         <SearchMovie 
           setMovieResults={setMovieResults} 
           setSearchTitle={setSearchTitle} 
           searchTitle={searchTitle} 
           setCurrentPage={setCurrentPage} 
           currentPage={currentPage}/>
-
-    <div className="mainDiv">
-
-        <section className="searchResults">
-          <DisplayFav  favResults={favResults} setFavResults={setFavResults}/>
+        <section>
           <Routes>
             <Route path="/"/>
-            <Route path="/SearchedMovies" element={<DisplayMovieList  movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} />
+            <Route path="/SearchedMovies" element={<DisplayMovieList movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} />
             <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} />
           </Routes>
         </section>
@@ -44,7 +42,7 @@ const App = () => {
     </div>
     <br/>
     <section>
-      
+      <DisplayFav favResults={favResults} setFavResults={setFavResults}/>
     </section>
       {/* <div>
         <h2>Favorite Movies </h2>

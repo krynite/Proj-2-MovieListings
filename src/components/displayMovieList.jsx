@@ -1,9 +1,9 @@
 // import getData from "../services/movieServices"
 
 import { Link } from "react-router-dom"
-import { getData } from "../services/movieServices"
-import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+// import { getData } from "../services/movieServices"
+// import { useNavigate } from "react-router-dom"
+// import { useState } from "react"
 
 
 const DisplayMovieList = ({movies, setCurrentPage, currentPage}) =>{
@@ -24,33 +24,39 @@ const DisplayMovieList = ({movies, setCurrentPage, currentPage}) =>{
         }
 
       }
-
-
-
-
-
     return (
-        <>
-          <div>
-            {movies.map((movie)=>{
-              return (
-              <div key={movie.imdbID}>
-                <Link to={`/SearchedMovies/${movie.imdbID}`}>
-                  <p>Title: {movie.Title}</p>
-                  <p>Year: {movie.Year}</p>
-                  <p>Type: {movie.Type}</p>
-                </Link> <br/>
-              </div>
-              )
-
-            })}
-            <button onClick={()=>handleNextPage('previous')}>Prev</button>  <button onClick={()=>handleNextPage('next')}>Next</button>
-          </div>
-        </>
-
-
-
-
+        <div>
+            {movies.map((movie) => (
+                <div key={movie.imdbID} className="movie-container">
+                    <Link to={`/SearchedMovies/${movie.imdbID}`} className="movie-link">
+                        <div className="movie-item">
+                            <div className="poster-container">
+                                {movie.Poster && movie.Poster !== "N/A" ? (
+                                    <img 
+                                        src={movie.Poster}
+                                        alt={movie.Title}
+                                        className="movie-poster"
+                                    />
+                                ) : (
+                                    <div className="no-poster">No Poster Available</div>
+                                )}
+                            </div>
+                            <div className="movie-details">
+                                <ul>
+                                    <li>Title: {movie.Title}</li>
+                                    <li>Year: {movie.Year}</li>
+                                    <li>Type: {movie.Type}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+            ))}
+            <div className="nextPageButton">
+                <button onClick={() => handleNextPage('previous')} disabled={currentPage <= 1}>Prev</button>
+                <button onClick={() => handleNextPage('next')}>Next</button>
+            </div>
+        </div>
     )
 }
 export default DisplayMovieList; 

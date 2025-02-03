@@ -12,11 +12,11 @@
   justify-content: space-between;
 
 }
-li {
+/* li {
   /* color: red; */
   padding: 0 2em;
 
-}
+} */
 
 /* .rightList {
   display: flex;
@@ -24,17 +24,16 @@ li {
 } */
 
 .mainDiv {
-  /* display: flex;
-  justify-content: space-between; */
   display: flex;
   justify-content: space-between;
+}
 
-}
-aside {
+/* aside {
   flex-grow: 1;
-}
+} */
 
 section {
+  display: flex;
   flex-grow: 2;
 
 }
@@ -42,3 +41,96 @@ section {
 .favText {
   font-size: 0.8em
 }
+
+/* h1 h3 {
+color: grey;
+
+} */
+
+button {
+  margin: 0.5em 0 0.5em ; 
+}
+
+.searchResults {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5% 0 2%;
+}
+
+.flex-container {
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction: row;
+}
+ul {
+  list-style-type: none;
+}
+
+
+
+.movie-container {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.movie-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.movie-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.poster-container {
+  flex-shrink: 0;
+  width: 150px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.no-poster {
+  width: 100px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.movie-details {
+  flex-grow: 1;
+}
+
+.movie-details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movie-details li {
+  margin: 5px 0;
+}
+
+.nextPageButton {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
