@@ -35,24 +35,14 @@ const App = () => {
         <section className="searchResults">
           <DisplayFav  favResults={favResults} setFavResults={setFavResults}/>
           <Routes>
-            <Route path="/"/>
-            <Route path="/SearchedMovies" element={<DisplayMovieList  movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} />
-            <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} />
+            <Route path="/"/> {/*Main Page*/}                         {/*Passing movie resuts to be displayed*/}
+            <Route path="/SearchedMovies" element={<DisplayMovieList  movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} /> 
+            <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} /> {/*useParam in DisplayMovieDetails*/}
           </Routes>
         </section>
 
     </div>
-    <br/>
-    <section>
-      
-    </section>
-      {/* <div>
-        <h2>Favorite Movies </h2>
-        <Routes>
-          <Route path="" element={<FavList/>}/>
-        </Routes>
-      </div> */}
-    
+
     </>
     
   );

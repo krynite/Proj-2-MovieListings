@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react"
 import {getData} from "../services/movieServices"
-// import DisplayMovieList from "./DisplayMovieList"
-// import DisplayMovieDetail from "../pages/DisplayMovieDetail"
 import { useNavigate } from "react-router"
 
 
@@ -61,7 +59,6 @@ const SearchMovie = ({setMovieResults, searchTitle, setSearchTitle, currentPage,
                 <label>Movie Title:  </label><input id="title" name="title" value={inputData.title} onChange={handleChange}/><br/>
                 <button type="submit">Search Button</button>
             </form>
-            {/* <DisplayFav/> */}
         </>
 
     )
