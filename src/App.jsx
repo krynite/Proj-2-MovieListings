@@ -1,6 +1,7 @@
 // src/App.jsx
 import "../src/App.css"
-import SearchMovie from "./components/SearchMovies";
+// import SearchMovie from "./components/SearchMovies";
+import SearchMovie from "./components/searchMovies";
 import DisplayMovieList from "./components/DisplayMovieList";
 import {Route, Routes, Link} from  'react-router-dom'
 // import FavList from "./components/FavList"

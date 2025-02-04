@@ -62,7 +62,5 @@ const SearchMovie = ({setMovieResults, searchTitle, setSearchTitle, currentPage,
         </>
 
     )
-
-
 }
 export default SearchMovie;

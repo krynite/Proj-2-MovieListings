@@ -5,12 +5,17 @@ meta {
 }
 
 get {
-  url: https://api.airtable.com/v0/appfPOUufQUjrWkOe/Table%201?maxRecords=3&view=Grid%20view
+  url: https://api.airtable.com/v0/appfPOUufQUjrWkOe/Table%201?maxRecords=100&view=Grid view
   body: none
   auth: none
 }
 
 params:query {
-  maxRecords: 3
+  maxRecords: 100
   view: Grid view
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer patyNwS3TS4fEIOsH.00e89440c4d24c460e50374c8ca2514902eb1cd8d3a562abeff98f818ac3acff
 }

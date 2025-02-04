@@ -5,18 +5,17 @@
   text-align: left;
 }
 
-
-
 .favMovieList {
   display: flex;
   justify-content: space-between;
 
 }
+
 /* li {
   /* color: red; */
   padding: 0 2em;
 
-} */
+/* } */ */
 
 /* .rightList {
   display: flex;
@@ -62,6 +61,8 @@ button {
   /* justify-content: space-around; */
   flex-direction: row;
 }
+
+
 ul {
   list-style-type: none;
 }

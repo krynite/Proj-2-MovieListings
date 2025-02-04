@@ -32,9 +32,6 @@ const DisplayMovieDetail = () => {
     }
 
 
-
-
-
     return (
         <div className="movie-details">
             <h2>{movieDetails.Title}</h2>
