@@ -29,7 +29,6 @@ async function getData(searchTitle,numSearchPage = 1) {
     } catch (error) {
         console.error(error.message);
     }
-
 }
 
 async function getMovieId(movieId) {
@@ -46,11 +45,7 @@ async function getMovieId(movieId) {
         return json;
     } catch (error) {
         console.error(error.message);
-
     }
-
-
-
 }
 
 
