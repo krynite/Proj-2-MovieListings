@@ -2,9 +2,8 @@
 import "../src/App.css"
 // import SearchMovie from "./components/SearchMovies";
 import SearchMovie from "./components/searchMovies";
-// import DisplayMovieList from "./components/DisplayMovieList";
-import DisplayMovieList from "./components/DisplayMovieList";
 import {Route, Routes, Link} from  'react-router-dom'
+import DisplayMovieList from "./components/DisplayMovieList"
 // import FavList from "./components/FavList"
 import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 import { useState } from "react";
@@ -38,7 +37,7 @@ const App = () => {
           <DisplayFav  favResults={favResults} setFavResults={setFavResults}/>
           <Routes>
             <Route path="/"/> {/*Main Page*/}                         {/*Passing movie resuts to be displayed*/}
-            <Route path="/SearchedMovies" element={<DisplayMovieList  movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} /> 
+            <Route path="/SearchedMovies" element={<DisplayMovieList movies={movieResults} setCurrentPage={setCurrentPage} currentPage={currentPage}/>} /> 
             <Route path="/SearchedMovies/:movieID" element={<DisplayMovieDetail />} /> {/*useParam in DisplayMovieDetails*/}
           </Routes>
         </section>
