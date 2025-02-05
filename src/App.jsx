@@ -3,7 +3,7 @@ import "../src/App.css"
 // import SearchMovie from "./components/SearchMovies";
 import SearchMovie from "./components/searchMovies";
 import {Route, Routes, Link} from  'react-router-dom'
-import DisplayMovieList from "./components/DisplayMovieList"
+import DisplayMovieList from "./components/test"
 // import FavList from "./components/FavList"
 import DisplayMovieDetail from "./pages/DisplayMovieDetail";
 import { useState } from "react";
